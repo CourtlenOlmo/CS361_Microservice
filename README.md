@@ -2,7 +2,7 @@
 
 ## Communication Contract
 
-Communication is done in this program using ZeroMQ's DEALER/DEALER biderectional pattern.
+Communication is done in this program using ZeroMQ's DEALER/DEALER bidirectional pattern.
 
 ```
 Port and Server Address for Main program:
