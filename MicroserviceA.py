@@ -157,5 +157,4 @@ for i in range(treasureAmount):
 returnJson = json.dumps(returnJson)
 
 socket_client.send_json(returnJson)
-'''print(f"Server sent back: {message.decode()}")'''
 socket_client.send_string("Q")
