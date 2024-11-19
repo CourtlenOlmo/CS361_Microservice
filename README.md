@@ -20,9 +20,13 @@ Server Address: tcp://<Server IP>:5555
 To request data, Main must send a dictionary named "request_data" containing the keys: dungeon_size, and treasure_quality.
 
 dungeon_size must have one of three values: small, medium, large.
+
 treasure_quality must be: low_quality, middle_quality, high_quality.
 
+----------------------------------------------------------------------------------------------
+
 #receiving data
+
 Once the Microservice has received data, it will create a random number based on the size of the dungeon.
 
 It will then loop through the chosen quality of treasure, choosing at random until the requested number has been chosen.
