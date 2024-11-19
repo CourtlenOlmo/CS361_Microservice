@@ -3,10 +3,12 @@
 Communication is done in this program using ZeroMQ's DEALER/DEALER biderectional pattern.
 
 Port and Server Address for Main program:
+
 Port: 5555
 Server Address: tcp://<Server IP>:5556
 
 Port and Server Address for Microservice program:
+
 Port: 5556
 Server Address: tcp://<Server IP>:5555
 
