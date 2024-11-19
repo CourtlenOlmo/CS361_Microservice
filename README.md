@@ -76,3 +76,6 @@ poller.register(socket_server, zmq.POLLIN)
 request = socket_server.recv()
 treasureRequest = json.loads(request)
 ```
+
+### UML Diagram
+![UML Diagram](https://github.com/user-attachments/assets/590ef2e6-0c50-4c27-81d1-ef0a33b4d404)
