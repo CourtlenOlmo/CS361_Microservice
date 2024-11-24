@@ -4,93 +4,27 @@ import random
 
 context = zmq.Context()
 
-low_quality = {
-    "Weapons" : {
-        "copper sword",
-        "wooden sword",
-        "unstrung bow"
+quality_map = {
+    "low_quality": {
+        "Weapons": ["copper sword", "wooden sword", "unstrung bow"],
+        "Potions": ["low quality potion", "half full mana potion"],
+        "Enchanted Items": ["Ring of fast walking", "Brooch of minor strength", "Socks of sweat removal"],
+        "Food": ["moldy cheese", "old milk", "old bone", "jar of honey"],
+        "Currency": ["10 copper coins", "25 copper coins", "50 copper coins"]
     },
-    "Potions" : {
-        "low quality potion",
-        "half full mana potion"
+    "medium_quality": {
+        "Weapons": ["iron sword", "longbow", "steel axe"],
+        "Potions": ["medium quality potion", "stamina potion"],
+        "Enchanted Items": ["Amulet of quickness", "Charm of moderate strength", "Boots of speed"],
+        "Food": ["aged cheese", "fresh bread", "smoked fish"],
+        "Currency": ["10 silver coins", "25 silver coins", "50 silver coins"]
     },
-    "Enchanted Items" : {
-        "Ring of fast walking",
-        "Brooch of minor strength",
-        "Socks of sweat removal"
-    },
-    "Food" : {
-        "moldy cheese",
-        "old milk",
-        "old bone",
-        "jar of honey"
-    },
-    "Currency" : {
-        "10 copper coins",
-        "25 copper coins",
-        "50 copper coins"
-    }
-},
-medium_quality = {
-    "Weapons" : {
-        "iron broadsword",
-        "elven bow",
-        "quarterstaff",
-        "steel battleaxe"
-    },
-    "Potions" : {
-        "medium quality potion",
-        "mana potion",
-        "potion of water breathing",
-        "potion of featherfall"
-    },
-    "Enchanted Items" : {
-        "Ring of haste",
-        "necklace of strength",
-        "fireball scroll"
-    },
-    "Food" : {
-        "cheese wheel",
-        "sausage",
-        "turkey leg",
-        "jar of honey"
-    },
-    "Currency" : {
-        "10 silver coins",
-        "25 silver coins",
-        "50 silver coins",
-        "75 copper coins"
-    }
-},
-high_quality = {
-    "Weapons" : {
-        "Mythril Flamberg",
-        "Staff of Indomitable Will",
-        "Jeweled Rapier",
-        "Elven shortbow",
-        "Trickster's Dagger"
-    },
-    "Potions" : {
-        "Resurrection Potion",
-        "Potion of Flight",
-        "Potion of Intelligence"
-    },
-    "Enchanted Items" : {
-        "Shield of the Ancient Warrior",
-        "Ring of Unseen Horrors",
-        'Scroll of "Speak to the Dead"',
-        "Unbreakable Chest Plate"
-    },
-    "Food" : {
-        "Lavish Charcuterie Board",
-        "Caviar",
-        "Wedding Cake",
-        "Freshly baked goods"
-    },
-    "Currency" : {
-        "10 Gold coins",
-        "25 Gold coins",
-        "50 Gold coins"
+    "high_quality": {
+        "Weapons": ["golden sword", "enchanted bow", "mythical axe"],
+        "Potions": ["high quality potion", "elixir of vitality"],
+        "Enchanted Items": ["Cloak of invisibility", "Ring of immense strength", "Orb of power"],
+        "Food": ["feast platter", "royal wine", "mystical fruit"],
+        "Currency": ["10 gold coins", "25 gold coins", "50 gold coins"]
     }
 }
 
