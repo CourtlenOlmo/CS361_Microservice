@@ -94,6 +94,25 @@ high_quality = {
     }
 }
 
+def determine_treasure_amount(dungeon_size):
+    if dungeon_size == "small":
+        return random.randrange(2, 4)
+    elif dungeon_size == "medium":
+        return random.randrange(4, 7)
+    elif dungeon_size == "large":
+        return random.randrange(7, 10)
+    else:
+        raise ValueError(f"Invalid dungeon size: {dungeon_size}")
+
+def generate_treasure(quality, treasure_amount):
+    treasure_response = {"Treasure": {}}
+    for _ in range(treasure_amount):
+        treasure_type = random.choice(list(quality.keys()))
+        treasure_item = random.choice(list(quality[treasure_type]))
+        treasure_response["Treasure"].setdefault(treasure_type, [])
+        treasure_response["Treasure"][treasure_type].append(treasure_item)
+    return treasure_response
+
 returnJson = {
     "Treasure" : {
     }
@@ -122,21 +141,8 @@ quality = treasureRequest["treasure_quality"]
 
 print(f"Request Received. Dungeon size: {size}  Dungeon Quality: {quality}")
 
-#Establish the size of the dungeon
-if size == "small":
-    treasureAmount = random.randrange(2,4)
-elif size == "medium":
-    treasureAmount = random.randrange(4, 7)
-elif size == "large":
-    treasureAmount = random.randrange(7, 10)
-
-#Establish the quality of dungeon
-if quality == "low_quality":
-    quality = low_quality
-elif quality == "middle_quality":
-    quality = medium_quality
-elif quality == "high_quality":
-    quality = high_quality
+treasure_amount = determine_treasure_amount(size)
+treasure_response = generate_treasure(quality_map[quality], treasure_amount)
 
 #Loop through chosen quality dictionary, adding to JSON dict until "treasureAmount" been reached
 for i in range(treasureAmount):
