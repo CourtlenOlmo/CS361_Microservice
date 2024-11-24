@@ -138,21 +138,7 @@ elif quality == "middle_quality":
 elif quality == "high_quality":
     quality = high_quality
 
-#Loop through chosen quality dictionary, adding to JSON dict until "treasureAmount" been reached
-for i in range(treasureAmount):
-    treasureType = random.choice(list(quality.keys()))
-    treasureItem = random.choice(list(quality[treasureType]))
-    update = {treasureType : treasureItem}
-    if treasureType in returnJson["Treasure"]:
-        if isinstance(returnJson["Treasure"][treasureType], list):
-            overlap = returnJson["Treasure"][treasureType]
-        else:
-            overlap = [(returnJson["Treasure"][treasureType])]
-        overlap.append(update[treasureType])
-        update = {treasureType : overlap}
-        returnJson["Treasure"].update(update)
-    else:
-        returnJson["Treasure"].update(update)
+returnJson.update(treasure_response)
 
 returnJson = json.dumps(returnJson)
 
