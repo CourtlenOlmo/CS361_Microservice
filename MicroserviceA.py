@@ -140,7 +140,7 @@ elif quality == "high_quality":
 
 #Loop through chosen quality dictionary, adding to JSON dict until "treasureAmount" been reached
 for i in range(treasureAmount):
-    treasureType = random.choice(list(quality.keys()))
+    treasureType = random.choice(list(quality.keys())) # ERROR LINE
     treasureItem = random.choice(list(quality[treasureType]))
     update = {treasureType : treasureItem}
     if treasureType in returnJson["Treasure"]:
@@ -158,3 +158,13 @@ returnJson = json.dumps(returnJson)
 
 socket_client.send_json(returnJson)
 socket_client.send_string("Q")
+
+# Below is the error I encountered when running the microservice alongside my main program. It looks like the communication is working just fine, 
+# I was able to send a dictionary containing the dungeon size and dungeon quality successfully. However when the program went to go through the lists it appears to have run into an issue. 
+#
+# Client attempting to connect to server...
+# Traceback (most recent call last):
+#   File "C:\Users\joemu\OneDrive\Desktop\OSU Coursework\CS 361 - Software Engineering 1\DungeonGeneratorVersion1\Microservice A - Treasure Gen.py", line 143, in <module>
+#     treasureType = random.choice(list(quality.keys()))
+# AttributeError: 'str' object has no attribute 'keys'
+# Request Received. Dungeon size: small  Dungeon Quality: Medium quality
